@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ITSC Onboarding</title>
+  <meta name="description" content="A personal checklist and calendar for a smooth start at ITSC.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="welcome" class="welcome-shell">
+    <header class="brand"><span class="brand-mark">ITSC</span><span>ITSC Onboarding</span></header>
+    <section class="welcome-card">
+      <div class="welcome-copy">
+        <p class="eyebrow">A clear start</p>
+        <h1>Your first month,<br><em>all in one place.</em></h1>
+        <p>Plan the first day, keep track of every setup task and see important milestones in one calm, personal workspace.</p>
+        <div class="welcome-actions">
+          <button class="primary" id="newPlan">＋ New plan</button>
+          <button class="secondary" id="importWelcome">↑ Import file</button>
+        </div>
+        <p class="error-message" id="welcomeError" role="alert"></p>
+      </div>
+      <div class="preview-board" aria-hidden="true">
+        <div class="preview-top"><span>August</span><span>74%</span></div>
+        <div class="preview-calendar" id="previewCalendar"></div>
+        <div class="preview-task"><b>✓</b><span><strong>Activate ZIM account</strong><small>First week</small></span></div>
+        <div class="preview-task"><b>○</b><span><strong>Complete safety briefing</strong><small>First month</small></span></div>
+      </div>
+    </section>
+    <footer>Private by design · Your data stays in your file</footer>
+  </main>
+
+  <main id="dashboard" class="app-shell hidden">
+    <header class="app-header">
+      <div class="brand"><span class="brand-mark">ITSC</span><span>ITSC Onboarding</span></div>
+      <div class="header-actions">
+        <button class="quiet" id="saveFile">↓ Save</button>
+        <button class="quiet" id="saveAsFile">Save as</button>
+        <button class="quiet" id="importDashboard">↑ Import</button>
+        <button class="avatar" id="avatar"></button>
+      </div>
+    </header>
+    <section class="hero-row">
+      <div><p class="eyebrow">Welcome aboard</p><h1 id="welcomeName"></h1><p id="startCopy"></p></div>
+      <div class="progress-card"><div class="progress-ring" id="progressRing"><span id="progressPercent"></span></div><div><strong id="progressCount"></strong><small>tasks completed</small></div></div>
+    </section>
+    <div class="dashboard-grid">
+      <div class="checklist-column" id="checklists"></div>
+      <aside>
+        <section class="calendar-card panel">
+          <div class="calendar-head"><div><p class="eyebrow">Schedule</p><h2 id="calendarTitle"></h2></div><div class="calendar-nav"><button id="previousMonth" aria-label="Previous month">←</button><button id="startMonth">Start</button><button id="nextMonth" aria-label="Next month">→</button></div></div>
+          <div class="calendar-grid weekdays"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+          <div class="calendar-legend"><span><i class="legend-start"></i> First day</span><span><i class="due-soon-dot"></i> Due in 3 days</span><span><i class="overdue-dot"></i> Overdue</span><span><i class="complete-dot"></i> Completed</span></div>
+        </section>
+        <section class="profile-card panel" id="profileCard"></section>
+        <section class="privacy-note"><span>◈</span><p><strong>Remember to save</strong>Your changes live in this browser until you download the updated file.</p></section>
+      </aside>
+    </div>
+  </main>
+
+  <div class="modal-backdrop hidden" id="newDialog">
+    <form class="modal" id="newForm">
+      <button class="close-button" type="button" id="closeDialog" aria-label="Close">×</button>
+      <p class="eyebrow">New onboarding</p><h2>Welcome to ITSC</h2>
+      <p class="modal-copy">Create a personal checklist and schedule. You can export everything as a file afterwards.</p>
+      <label>Full name<input required autofocus name="name" placeholder="Jan Horning"></label>
+      <label>Email address<input type="email" name="email" placeholder="jan.horning@uni-wuppertal.de"></label>
+      <div class="form-row">
+        <label>Role<select name="role"><option>PhD researcher</option><option>Postdoc</option><option>Student assistant</option><option>Guest researcher</option><option>Other</option></select></label>
+        <label>Start date<input required type="date" name="startDate"></label>
+      </div>
+      <p class="error-message" id="dateError" role="alert"></p>
+      <button class="primary wide" type="submit">Create onboarding plan</button>
+    </form>
+  </div>
+
+  <input class="visually-hidden" id="fileInput" type="file" accept=".json,.onboarding.json,application/json">
+  <script src="app.js"></script>
+</body>
+</html>

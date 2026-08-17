@@ -43,12 +43,12 @@
     </header>
     <section class="hero-row">
       <div><p class="eyebrow">Welcome aboard</p><h1 id="welcomeName"></h1><p id="startCopy"></p></div>
-      <div class="progress-card"><div class="progress-ring" id="progressRing"><span id="progressPercent"></span></div><div><strong id="progressCount"></strong><small>tasks completed</small></div></div>
+      <div class="progress-card" id="progressCard"><div class="progress-ring" id="progressRing"><span id="progressPercent"></span></div><div><strong id="progressCount"></strong><small>tasks completed</small></div></div>
     </section>
     <div class="dashboard-grid">
       <div class="checklist-column" id="checklists"></div>
       <aside>
-        <section class="calendar-card panel">
+        <section class="calendar-card panel" id="calendarCard">
           <div class="calendar-head"><div><p class="eyebrow">Schedule</p><h2 id="calendarTitle"></h2></div><div class="calendar-nav"><button id="previousMonth" aria-label="Previous month">←</button><button id="startMonth">Start</button><button id="nextMonth" aria-label="Next month">→</button></div></div>
           <div class="calendar-grid weekdays"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
           <div class="calendar-grid" id="calendarGrid"></div>
@@ -68,7 +68,7 @@
       <label>Full name<input required autofocus name="name" placeholder="Jan Horning"></label>
       <label>Email address<input type="email" name="email" placeholder="jan.horning@uni-wuppertal.de"></label>
       <div class="form-row">
-        <label>Role<select name="role"><option>PhD researcher</option><option>Postdoc</option><option>Student assistant</option><option>Guest researcher</option><option>Other</option></select></label>
+        <label>Role<select name="role"><option>PhD researcher</option><option>Postdoc</option><option>Student assistant (SHK)</option><option>Guest researcher</option><option>Other</option></select></label>
         <label>Start date<input required type="date" name="startDate"></label>
       </div>
       <p class="error-message" id="dateError" role="alert"></p>
